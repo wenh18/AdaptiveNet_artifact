@@ -1,0 +1,6 @@
+datasets/
+oncloud/output
+oncloud/pretrainedweight
+oncloud/weights
+*.zip
+*.npy

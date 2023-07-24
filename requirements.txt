@@ -1,0 +1,12 @@
+torch
+torchvision
+timm==0.5.4
+torch_pruning==1.1.9
+tensorboard
+tqdm
+pyyaml
+opencv-python
+webcolors
+omegaconf
+pycocotools
+albumentations[imgaug]
