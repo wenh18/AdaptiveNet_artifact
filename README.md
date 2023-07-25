@@ -30,4 +30,4 @@ cd oncloud
 bash scripts/train cls.sh
 ```
 ## Acknowledgements
-We would like to thank the code from [timm]([https://example.com](https://github.com/huggingface/pytorch-image-models), [EfficientDetV2](https://github.com/rwightman/efficientdet-pytorch), and [segmentation-models.pytorch](https://github.com/qubvel/segmentation_models.pytorch).
+We would like to thank the code from [timm](https://github.com/huggingface/pytorch-image-models), [EfficientDetV2](https://github.com/rwightman/efficientdet-pytorch), and [segmentation-models.pytorch](https://github.com/qubvel/segmentation_models.pytorch).
