@@ -156,9 +156,9 @@ def load_resnet_checkpoint(MultiModel, path, stage=0, args=None):
         MultiModel.load_state_dict(multimodel_dict)
         for (name, parameter) in MultiModel.named_parameters():
             if name in state:
-                print(name, 'frozen')
+                # print(name, 'frozen')
                 parameter.requires_grad = False
-        print("loaded")
+        # print("loaded")
 
         init_resnet_multiblocks(MultiModel, args)
 
@@ -301,30 +301,30 @@ def init_resnet_multiblocks(model, args):
                     layerchoice.bn1.running_mean.data = blockchoice[0].bn1.running_mean.data.clone().detach()
                     layerchoice.bn1.running_var.data = blockchoice[0].bn1.running_var.data.clone().detach()
                     layerchoice.bn1.num_batches_tracked.data = blockchoice[0].bn1.num_batches_tracked.data.clone().detach()
-                    print(idx)
+                    # print(idx)
                 if layerchoice.bn2.weight.data.shape == blockchoice[0].bn2.weight.data.shape:
                     layerchoice.bn2.weight.data = blockchoice[0].bn2.weight.data.clone().detach()
                     layerchoice.bn2.bias.data = blockchoice[0].bn2.bias.data.clone().detach()
                     layerchoice.bn2.running_mean.data = blockchoice[0].bn2.running_mean.data.clone().detach()
                     layerchoice.bn2.running_var.data = blockchoice[0].bn2.running_var.data.clone().detach()
                     layerchoice.bn2.num_batches_tracked.data = blockchoice[0].bn2.num_batches_tracked.data.clone().detach()
-                    print(idx)
+                    # print(idx)
                 if layerchoice.bn3.weight.data.shape == blockchoice[0].bn3.weight.data.shape:
                     layerchoice.bn3.weight.data = blockchoice[0].bn3.weight.data.clone().detach()
                     layerchoice.bn3.bias.data = blockchoice[0].bn3.bias.data.clone().detach()
                     layerchoice.bn3.running_mean.data = blockchoice[0].bn3.running_mean.data.clone().detach()
                     layerchoice.bn3.running_var.data = blockchoice[0].bn3.running_var.data.clone().detach()
                     layerchoice.bn3.num_batches_tracked.data = blockchoice[0].bn3.num_batches_tracked.data.clone().detach()
-                    print(idx)
+                    # print(idx)
                 if layerchoice.conv1.weight.data.shape == blockchoice[0].conv1.weight.data.shape:
                     layerchoice.conv1.weight.data = blockchoice[0].conv1.weight.data.clone().detach()
-                    print(idx)
+                    # print(idx)
                 if layerchoice.conv2.weight.data.shape == blockchoice[0].conv2.weight.data.shape:
                     layerchoice.conv2.weight.data = blockchoice[0].conv2.weight.data.clone().detach()
-                    print(idx)
+                    # print(idx)
                 if layerchoice.conv3.weight.data.shape == blockchoice[0].conv3.weight.data.shape:
                     layerchoice.conv3.weight.data = blockchoice[0].conv3.weight.data.clone().detach()
-                    print(idx)
+                    # print(idx)
                 if hasattr(layerchoice, 'downsample'):
                     # resnet50
                     if layerchoice.downsample is not None and blockchoice[0].downsample is not None:
@@ -346,7 +346,7 @@ def init_resnet_multiblocks(model, args):
                     #         layerchoice.downsample[2].running_mean.data = blockchoice[0].downsample[2].running_mean.data.clone().detach()
                     #         layerchoice.downsample[2].running_var.data = blockchoice[0].downsample[2].running_var.data.clone().detach()
                     #         layerchoice.downsample[2].num_batches_tracked.data = blockchoice[0].downsample[2].num_batches_tracked.data.clone().detach()
-                    print(idx)
+                    # print(idx)
 
 ################################### for segmentation ##########################################
 def _layeridx2multmodelidx(layeridx, block_idx, block_choice_idx, layer_len_list):  # layeridx = 1, 2, 3, 4
